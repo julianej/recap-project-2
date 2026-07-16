@@ -6,16 +6,16 @@ const answerBtn = document.querySelector('[data-js="answer-btn"]')
 const answer = document.querySelector('[data-js="answer"]');
 const btnText = document.querySelector("button");
 
-// CHECK IF THE ELEMENTS ARE FOUND
+// 01. CHECK IF THE ELEMENTS ARE FOUND
 console.log(answerBtn);
 console.log(answer);
 
-// FIRST TASK/SOLUTION > WITH a new CLASS .hidden
+// 01 .FIRST TASK/SOLUTION > WITH a new CLASS .hidden
 // // function showAnswers() {
 //    answer.classList.toggle("hidden");
 // }
 
-// FIRST TASK/SECOND > SOLUTION WITH a new CLASS BIM .card__answer--active
+// 01. FIRST TASK/SECOND > SOLUTION WITH a new CLASS BIM .card__answer--active
 // // function showAnswers() {
 //     answer.classList.toggle("card__answer--active");
 //     console.log("card__answer--active");
@@ -25,7 +25,7 @@ console.log(answer);
 //     console.log(btnText.innerHTML);
 // }
 
-// THIRD TASK WITH if ..else
+// 03. TASK WITH if ..else
 function showAnswers() {
   answer.classList.toggle("card__answer--active");
   console.log("card__answer--active");
@@ -39,7 +39,7 @@ function showAnswers() {
   }
 }
 
-// // CLICK EVENT
+// // CLICK EVENT SHOW ANSWER
 // // führe die Funktion showAnswers aus, wenn BTN is clicked:
 answerBtn.addEventListener("click", showAnswers);
 
@@ -48,11 +48,10 @@ answerBtn.addEventListener("click", showAnswers);
 //   // Function body
 // }
 
-// SECOND TASK > FUNCTION CHANGE COLOUR 
+// 02.TASK > FUNCTION CHANGE COLOUR 
 function changeColour() {
    bookmarkBtn.classList.toggle("bookmark--active");
 }
-
-// CLICK EVENT 
+// 02.CLICK EVENT CHANGE COLOUR 
   bookmarkBtn.addEventListener("click", changeColour);
 
