@@ -29,6 +29,11 @@
   display: none;
 }
 
+/* ADD A CLASS FOR CLICK EVENT FUNCTION */
+.card__answer--active {
+  display: block;
+}
+
 .card__answer--active {
   display: block;
 }
