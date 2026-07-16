@@ -24,6 +24,15 @@ function showAnswers() {
 // führe die Funktion showAnswers aus, wenn BTN is clicked:
 answerBtn.addEventListener("click", showAnswers);
 
-function bookmarkQuestion() {
-  // Function body
+// 
+// function bookmarkQuestion() {
+//   // Function body
+// }
+
+// FUNCTION CHANGE COLOUR 
+function changeColour() {
+   bookmarkBtn.classList.toggle("bookmark--active");
 }
+
+// CLICK EVENT 
+  bookmarkBtn.addEventListener("click", changeColour);

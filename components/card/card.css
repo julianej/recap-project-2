@@ -44,6 +44,10 @@
   top: -1.5rem;
 }
 
+.bookmark--active {
+  color: gold;
+}
+
 .card__tag-list {
   display: flex;
   flex-wrap: wrap;
