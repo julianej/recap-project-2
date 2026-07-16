@@ -1,5 +1,5 @@
  //phew… not a lot going on here. Please add some code!
-
+// CHECK IF THE SCRIPT IS LINKED
 console.log("JS is running");
 const bookmarkBtn = document.querySelector('[data-js="bookmark-btn"]')
 const answerBtn = document.querySelector('[data-js="answer-btn"]')
@@ -19,10 +19,11 @@ function showAnswers() {
   answer.classList.toggle("card__answer--active");
   console.log("card__answer--active");
 }
-// answerBtn.addEventListener("click", showAnswers);
 
+// CLICK EVENT
+// führe die Funktion showAnswers aus, wenn BTN is clicked:
 answerBtn.addEventListener("click", showAnswers);
 
- function bookmarkQuestion() {
+function bookmarkQuestion() {
   // Function body
 }
