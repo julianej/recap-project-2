@@ -2,8 +2,10 @@
 const form = document.querySelector('[data-js="form"]');
 const questionInput = document.querySelector('[data-js="question-input"]');
 const answerInput = document.querySelector('[data-js="answer-input"]');
-const tag = document.querySelector('[data-js="tag-input"]');
+const tagInput = document.querySelector('[data-js="tag-input"]');
 const submit = document.querySelector('[data-js="btn-submit"]');
+
+const cardContainer = document.querySelector('[data-js="card-container"]');
 
 const questionCounter = document.querySelector('[data-js="question-counter"]');
 const answerCounter = document.querySelector('[data-js="answer-counter"]');
@@ -40,27 +42,66 @@ answerInput.addEventListener("input", () => {
 // console.log(card);
 
 // THAN I CALL the function
-function createCard(question, answer, tag) {
-    const article = document.createElement("article");
-    console.log(article);
-    const ul = document.createElement("ul");
-    const li = document.createElement("li");
-    const h2 = document.createElement("h2");
-    const p = document.createElement("p");
+// function createCard() {
+function createCard() {
+  const article = document.createElement("article");
+  const ul = document.createElement("ul");
+  const li = document.createElement("li");
+  const h2 = document.createElement("h2");
+  const p = document.createElement("p");
+  const bookmarkButton = document.createElement("button");
+  const answerButton = document.createElement("button");
+  const tagList = document.createElement("ul");
+  const tagItem = document.createElement("li");
 
-    ul.classList.add("card-list");
-    li.classList.add("card-list__item");
+  ul.classList.add("card-list");
+  li.classList.add("card-list__item");
+  tagList.classList.add("tag-list");
+  tagItem.classList.add("tag-list__item");
+  bookmarkButton.classList.add("card__bookmark-button");
+  answerButton.classList.add("card__button-answer");
 
-    h2.textContent = questionInput;
-    p.textContent = answerInput;
+  h2.textContent = questionInput.value;
+  p.textContent = answerInput.value;
+
+  bookmarkButton.type = "button";
+  answerButton.type = "button";
+
+  bookmarkButton.setAttribute(
+    "aria-label",
+    "Bookmark this question"
+  );
+
+  bookmarkButton.textContent = "🔖";
+  answerButton.textContent = "Show Answer";
+  tagItem.textContent = tagInput.value;
 
 // // WRONG
-// article.append(ul, li, tag)
+// // WRONG article.append(ul, li, tag)
     article.append(ul);
-    ul.append(li);
-    li.append(h2, p);
+  article.append(ul);
+  ul.append(li);
+  li.append(h2, p, bookmarkButton, answerButton, tagList);
+  tagList.append(tagItem);
 
+  cardContainer.append(article);
 }
 
-// object.addEventListener("click", myScript);
-submit.addEventListener("click", createCard);
+
+// CALL CLICK EVENT object.addEventListener("click", myScript);
+// WRONG because it doenst handles the form, just the click
+// submit.addEventListener("click", createCard);
+
+form.addEventListener("submit", (event) => {
+// TypeError: Cannot read properties of null (reading 'addEventListener')
+// data-js="form" was not in HTML  
+  console.log(form);
+  event.preventDefault();
+  createCard();
+  form.reset();
+  questionCounter.textContent = 76;
+  answerCounter.textContent = 150;
+});
+
+
+
