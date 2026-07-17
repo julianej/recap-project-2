@@ -81,7 +81,7 @@ function createCard() {
   article.append(h2, bookmarkButton, p, answerButton, tagList);
   tagList.append(tagItem);
 
-  cardContainer.append(article);
+  cardContainer.append(ul);
 }
 
 //---- SUBMIT BUTTON -----//
