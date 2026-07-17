@@ -91,8 +91,9 @@ form.addEventListener("submit", (event) => {
   console.log(form);
   event.preventDefault();
 
-  const formData = new formData(event.target);
-  const data = Object.fromEntries (formData);
+  // USING FORM DATA than REWRITE
+  // const formData = new formData(event.target);
+  // const data = Object.fromEntries (formData);
 
   createCard();
   form.reset();
