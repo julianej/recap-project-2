@@ -54,11 +54,12 @@ function createCard() {
   const tagList = document.createElement("ul");
   const tagItem = document.createElement("li");
 
-  ul.classList.add("card-list");
+  article.classList.add("card");
+  h2.classList.add("card__question");
   li.classList.add("card-list__item");
-  tagList.classList.add("tag-list");
-  tagItem.classList.add("tag-list__item");
-  bookmarkButton.classList.add("card__bookmark-button");
+  tagList.classList.add("card__tag-list");
+  tagItem.classList.add("card__tag-list-item");
+  bookmarkButton.classList.add("card__button-bookmark");
   answerButton.classList.add("card__button-answer");
 
   h2.textContent = questionInput.value;
@@ -78,10 +79,8 @@ function createCard() {
 
 // // WRONG
 // // WRONG article.append(ul, li, tag)
-    article.append(ul);
-  article.append(ul);
+  article.append(h2,bookmarkButton, answerButton, tagList);
   ul.append(li);
-  li.append(h2, p, bookmarkButton, answerButton, tagList);
   tagList.append(tagItem);
 
   cardContainer.append(article);
