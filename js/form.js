@@ -56,9 +56,12 @@ function createCard() {
 
   ul.classList.add("card-list");
   li.classList.add("card-list__item");
-  tagList.classList.add("tag-list");
-  tagItem.classList.add("tag-list__item");
-  bookmarkButton.classList.add("card__bookmark-button");
+  article.classList.add("card");
+  h2.classList.add("card__question");
+  p.classList.add("card__answer");
+  tagList.classList.add("card__tag-list");
+  tagItem.classList.add("card__tag-list-item");
+  bookmarkButton.classList.add("card__button-bookmark");
   answerButton.classList.add("card__button-answer");
 
   h2.textContent = questionInput.value;
@@ -78,10 +81,8 @@ function createCard() {
 
 // // WRONG
 // // WRONG article.append(ul, li, tag)
-    article.append(ul);
-  article.append(ul);
   ul.append(li);
-  li.append(h2, p, bookmarkButton, answerButton, tagList);
+  article.append(h2,bookmarkButton, p, answerButton, tagList);
   tagList.append(tagItem);
 
   cardContainer.append(article);
