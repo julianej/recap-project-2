@@ -54,9 +54,11 @@ function createCard() {
   const tagList = document.createElement("ul");
   const tagItem = document.createElement("li");
 
+  ul.classList.add("card-list");
+  li.classList.add("card-list__item");
   article.classList.add("card");
   h2.classList.add("card__question");
-  li.classList.add("card-list__item");
+  p.classList.add("card__answer");
   tagList.classList.add("card__tag-list");
   tagItem.classList.add("card__tag-list-item");
   bookmarkButton.classList.add("card__button-bookmark");
@@ -79,8 +81,8 @@ function createCard() {
 
 // // WRONG
 // // WRONG article.append(ul, li, tag)
-  article.append(h2,bookmarkButton, answerButton, tagList);
   ul.append(li);
+  article.append(h2,bookmarkButton, p, answerButton, tagList);
   tagList.append(tagItem);
 
   cardContainer.append(article);
