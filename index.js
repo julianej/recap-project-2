@@ -43,15 +43,16 @@ function showAnswers() {
 // // führe die Funktion showAnswers aus, wenn BTN is clicked:
 answerBtn.addEventListener("click", showAnswers);
 
-// 
-// function bookmarkQuestion() {
-//   // Function body
-// }
-
 // 02.TASK > FUNCTION CHANGE COLOUR 
+// function bookmarkQuestion() 
 function changeColour() {
-   bookmarkBtn.classList.toggle("bookmark--active");
+bookmarkBtn.classList.toggle("bookmark--active");
 }
-// 02.CLICK EVENT CHANGE COLOUR 
-  bookmarkBtn.addEventListener("click", changeColour);
+// 02.CLICK EVENT CHANGE COLOUR CALLBACK
+// CALL CLICK EVENT object.addEventListener("click", myScript);
+ bookmarkBtn.addEventListener("click", changeColour);
 
+// STANDARD ADD EVENT LISTENER
+//  bookmarkBtn.addEventListener("click",() => {
+//     bookmarkBtn.classList.toggle("bookmark--active");
+//  })

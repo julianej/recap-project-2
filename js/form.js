@@ -6,6 +6,7 @@ const tagInput = document.querySelector('[data-js="tag-input"]');
 const submit = document.querySelector('[data-js="btn-submit"]');
 
 const cardContainer = document.querySelector('[data-js="card-container"]');
+// console.log(cardContainer);
 
 const questionCounter = document.querySelector('[data-js="question-counter"]');
 const answerCounter = document.querySelector('[data-js="answer-counter"]');
@@ -34,17 +35,11 @@ answerInput.addEventListener("input", () => {
 // const ul = document.createElement("ul");
 // const li = document.createElement("li");
 
-// THANN I add classList
-// ul.classList.add("card-list");
-// li.classList.add("card-list__item");
 
-// THAN I wanna log card, but didnt even created one
-// console.log(card);
-
-// THAN I CALL the function
-// function createCard() {
+//---- CREATE FUNCTION -----//
 function createCard() {
   const article = document.createElement("article");
+  console.log(article);
   const ul = document.createElement("ul");
   const li = document.createElement("li");
   const h2 = document.createElement("h2");
@@ -54,8 +49,10 @@ function createCard() {
   const tagList = document.createElement("ul");
   const tagItem = document.createElement("li");
 
+  // ADD CLASS LIST
   ul.classList.add("card-list");
   li.classList.add("card-list__item");
+
   article.classList.add("card");
   h2.classList.add("card__question");
   p.classList.add("card__answer");
@@ -64,8 +61,12 @@ function createCard() {
   bookmarkButton.classList.add("card__button-bookmark");
   answerButton.classList.add("card__button-answer");
 
+  // STORE INPUT VALUES or TEXT
   h2.textContent = questionInput.value;
   p.textContent = answerInput.value;
+  bookmarkButton.textContent = "🔖";
+  answerButton.textContent = "Show Answer";
+  tagItem.textContent = tagInput.value;
 
   bookmarkButton.type = "button";
   answerButton.type = "button";
@@ -75,34 +76,31 @@ function createCard() {
     "Bookmark this question"
   );
 
-  bookmarkButton.textContent = "🔖";
-  answerButton.textContent = "Show Answer";
-  tagItem.textContent = tagInput.value;
-
-// // WRONG
-// // WRONG article.append(ul, li, tag)
   ul.append(li);
-  article.append(h2,bookmarkButton, p, answerButton, tagList);
+  li.append(article);
+  article.append(h2, bookmarkButton, p, answerButton, tagList);
   tagList.append(tagItem);
 
   cardContainer.append(article);
 }
 
-
-// CALL CLICK EVENT object.addEventListener("click", myScript);
-// WRONG because it doenst handles the form, just the click
-// submit.addEventListener("click", createCard);
-
+//---- SUBMIT BUTTON -----//
 form.addEventListener("submit", (event) => {
 // TypeError: Cannot read properties of null (reading 'addEventListener')
 // data-js="form" was not in HTML  
   console.log(form);
   event.preventDefault();
+
+  const formData = new formData(event.target);
+  const data = Object.fromEntries (formData);
+
   createCard();
   form.reset();
   questionCounter.textContent = 76;
   answerCounter.textContent = 150;
 });
+
+
 
 
 
